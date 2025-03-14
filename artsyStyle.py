@@ -33,6 +33,13 @@ def capture_image():
     Captures an image using the Raspberry Pi Camera module and saves it to the `images/` directory.
     """
     picam2 = Picamera2()
+    
+    # Set camera resolution - because we don't show preview, don't need a lores configuration
+    camera_config =picam2.create_still_configuration(main={"size": (1920, 1080)})
+    # load the configuration
+    picam2.configure(camera_config)
+
+    # set filename
     filename = f"images/captured_{int(time.time())}.jpg"
 
     # Capture image without showing a preview
