@@ -8,11 +8,6 @@ This directory contains **Jupyter notebooks** for training, converting, and expo
 This notebook trains a **new neural style transfer model** using a dataset of content images and a single reference style image. It leverages a **VGG-based feature extractor** to learn how to apply the style while preserving the structure of input images.
 
 **Steps covered in this notebook:**
-- Clone the **PyTorch examples repository** to access `fast_neural_style`:
-  ```bash
-  git clone https://github.com/pytorch/examples.git
-  cd examples/fast_neural_style
-  ```
 - Load content and style images
 - Extract features using a pre-trained VGG network
 - Optimize the style transfer loss function
@@ -56,5 +51,4 @@ After converting the model to ONNX, move it to the **models_onnx/** directory in
 
 ---
 By following these steps, you can **train custom style transfer models** and deploy them for AI-powered artistic transformations! 🚀🎨
-
 

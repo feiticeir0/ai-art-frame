@@ -20,29 +20,28 @@ First, update the system and install necessary packages:
 sudo apt update && sudo apt upgrade -y
 sudo apt install python3-pip python3-picamera2 feh
 ```
-### **3. Install Python Dependencies**
+### **3. Clone the Repository & Set Up**
+```bash
+git clone https://github.com/yourgithubusername/ai-art-frame.git
+```
+### **4. Create and activate virtual environment**
+```bash
+python -m venv ai-art-frame
+source ai-art-frame/bin/activate
+cd ai-art-frame
+```
+
+### **5. Install Python Dependencies**
 Install the required Python packages:
 ```bash
 pip install torch torchvision onnxruntime==1.20 pillow numpy
 ```
 **Note:** Avoid ONNX Runtime 1.21 on Raspberry Pi due to compatibility issues.
 
-### **4. Clone the Repository & Set Up**
-```bash
-git clone https://github.com/yourgithubusername/ai-art-frame.git
-cd ai-art-frame
-mkdir images  # Directory for storing captured and processed images
-mkdir models_onnx  # Place ONNX models here
-```
+[The issue for version 1.21 has been reported and it has been solved](https://github.com/microsoft/onnxruntime/issues/23957#event-16782011854).
 
-### **5. Download ONNX Style Models**
-Place your **ONNX style transfer models** inside the `models_onnx` directory. Example models include:
-- `candy.onnx`
-- `starry_night.onnx`
-- `cubism.onnx`
-- `pop_art.onnx`
+Try it and if it does not work, use version 1.20
 
----
 ## **Running the AI Art Frame**
 
 ### **Manual Execution**
@@ -69,8 +68,8 @@ This ensures the script **runs in the background every 2 hours**, creating a con
 
 ---
 ## **Project Roadmap & Future Improvements**
-✅ **Live Web Interface** - Control the AI Art Frame remotely via a web UI.  
 ✅ **New Artistic Styles** - Add more ONNX models for diverse artistic effects.  
+✅ **Raspberry Pi AI HAT+** - Add support for the Raspberry PI AI HAT+.  
 ✅ **Performance Optimization** - Improve speed using AI accelerators like Coral TPU or NVIDIA Jetson.  
 
 ---
